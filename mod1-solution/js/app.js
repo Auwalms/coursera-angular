@@ -10,10 +10,12 @@
 
     LunchCheckCtrl.$inject = ['$scope'];
     function LunchCheckCtrl($scope) {
-      $scope.message = 'Hello World';
+
+
+      $scope.checkStatus = function () {
+        
+      }
+
     }
 
-
-
-
-})();
+})()
