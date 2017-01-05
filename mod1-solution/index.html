@@ -26,8 +26,7 @@
          </div>
          <div class="form-group message">
            <!-- Your message can go here. -->
-           <h3 ng-if='foodList' class="callout call text-danger" >Please enter data first</h3>
-           <h3 ng-if='foodList.length == 0' class="callout text-danger" >Empty</h3>
+           <h3 ng-if='foodList.length == 0' class="callout callout-danger text-danger" >Please enter data first</h3>
            <h3 ng-if="splited.length <= 3" class="callout callout-success text-success">Enjoy!</h3>
            <h3 ng-if="splited.length > 3" class="callout callout-success text-success">Too much!</h3>
          </div>
