@@ -13,7 +13,7 @@
       .callout-success { border-color: #3c763d;}
     </style>
   </head>
-<body ng-controller="LunchCheckCtrl">
+<body ng-controller="LunchCheckController">
    <div class="container">
      <h1>Lunch Checker</h1>
          <div class="form-group">
@@ -27,7 +27,7 @@
          <div class="form-group message">
            <!-- Your message can go here. -->
            <h3 ng-if='show' class="callout callout-danger text-danger" >Please enter data first</h3>
-           <h3 ng-if="splited.length <= 3" class="callout callout-success text-success">Enjoy!</h3>
+           <h3 ng-if="splited.length <= 3 && !show " class="callout callout-success text-success">Enjoy!</h3>
            <h3 ng-if="splited.length > 3" class="callout callout-success text-success">Too much!</h3>
          </div>
    </div>
