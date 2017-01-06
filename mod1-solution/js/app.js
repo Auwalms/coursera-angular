@@ -12,6 +12,11 @@
 
 
       $scope.checkStatus = function () {
+        if ($scope.show == $scope.show.length) {
+            $scope.show = $scope.foodList;
+            console.log('The length of foodList is'+ $scope.show.length);
+        }
+
       $scope.splited = $scope.foodList.split(',');
       console.log($scope.splited.length);
         /**
