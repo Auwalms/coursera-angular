@@ -25,7 +25,6 @@
              <button class="btn btn-default" ng-click="checkStatus()">Check If Too Much</button>
          </div>
          <div class="form-group message">
-           <!-- Your message can go here. -->
            <h3 ng-if='show' class="callout callout-danger text-danger" >Please enter data first</h3>
            <h3 ng-if="splited.length <= 3 && !show " class="callout callout-success text-success">Enjoy!</h3>
            <h3 ng-if="splited.length > 3" class="callout callout-success text-success">Too much!</h3>
