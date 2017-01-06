@@ -1,1 +1,3 @@
 Read Me for Coursera Angular Course...
+
+Solution to Assignment 1 can be found  [**HERE**](https://auwalms.github.io/coursera-angular/mod1-solution/)
