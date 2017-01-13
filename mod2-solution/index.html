@@ -1,37 +1,41 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app='ShoppingListCheckOff'>
   <head>
     <title>Shopping List Check Off</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles/app.css">
+    <script src="js/angular.min.js"></script>
+    <script src="js/app.js"></script>
   </head>
 <body>
   <div class="container">
   <h1 align='center' >Shopping List Check Off</h1>
 
   <div class="row">
-    <div class="card">
+    <div class="card" ng-controller='ToBuyController as toBuy'>
     <!-- To Buy List -->
     <div class="well col-md-offset-2 col-md-4" style="background-color:#B2EBF2">
      <h2 class="text-info">To Buy <i class="fa fa-shopping-basket"></i>:</h2>
-     <ul>
+     {{toBuy.text}}
+     <!-- <ul>
        <li>Buy 10 cookies <button class="btn btn-default"><span class="glyphicon glyphicon-ok"></span> Bought</button></li>
        <li>Buy 10 cookies <button class="btn btn-default"><span class="glyphicon glyphicon-ok"></span> Bought</button></li>
      </ul>
-     <div class="emptyMessage">Everything is bought!</div>
+     <div class="emptyMessage">Everything is bought!</div> -->
     </div>
     </div>
 
-    <div class="card">
+    <div class="card" ng-controller='AlreadyBoughtController as alreadyBought'>
       <!-- Already Bought List -->
     <div class="well col-md-offset-2 col-md-4" style='background-color:#DCEDC8'>
          <h2 class="text-success">Already Bought <i class="fa fa-shopping-bag"></i>:</h2>
-         <ul>
+         {{alreadyBought.text}}
+         <!-- <ul>
            <li>Bought 10 cookies</li>
          </ul>
-         <div class="emptyMessage">Nothing bought yet.</div>
+         <div class="emptyMessage">Nothing bought yet.</div> -->
     </div>
     </div>
   </div>
