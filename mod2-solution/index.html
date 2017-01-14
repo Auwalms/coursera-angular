@@ -17,13 +17,16 @@
     <div class="card" ng-controller='ToBuyController as toBuy'>
     <!-- To Buy List -->
     <div class="well col-md-offset-2 col-md-4" style="background-color:#B2EBF2">
-     <h2 class="text-info">To Buy <i class="fa fa-shopping-basket"></i>:</h2>
-     {{toBuy.text}}
-     <!-- <ul>
-       <li>Buy 10 cookies <button class="btn btn-default"><span class="glyphicon glyphicon-ok"></span> Bought</button></li>
-       <li>Buy 10 cookies <button class="btn btn-default"><span class="glyphicon glyphicon-ok"></span> Bought</button></li>
+     <h2 class="text-info" >To Buy <i class="fa fa-shopping-basket"></i>:</h2>
+     <ul>
+       <li ng-repeat='item in toBuy.availableItems'>
+         Buy {{item.quantity}} - {{item.name}}
+         <button type="button" class="btn btn-md btn-success" ng-click='toBuy.buyItem($index);'>Buy<i class="fa fa-check"></i></button>
+       </li>
+
      </ul>
-     <div class="emptyMessage">Everything is bought!</div> -->
+
+     <div class="emptyMessage" ng-if='toBuy.availableItems.length == 0'>Everything is bought!</div>
     </div>
     </div>
 
@@ -31,11 +34,12 @@
       <!-- Already Bought List -->
     <div class="well col-md-offset-2 col-md-4" style='background-color:#DCEDC8'>
          <h2 class="text-success">Already Bought <i class="fa fa-shopping-bag"></i>:</h2>
-         {{alreadyBought.text}}
-         <!-- <ul>
-           <li>Bought 10 cookies</li>
-         </ul>
-         <div class="emptyMessage">Nothing bought yet.</div> -->
+          <ul>
+            <li ng-repeat='goods in alreadyBought.boughtItems'>
+              Bought {{goods.quantity}} - {{goods.name}}
+            </li>
+          </ul>
+         <div class="emptyMessage" ng-if='alreadyBought.boughtItems.length == 0' >Nothing bought yet.</div>
     </div>
     </div>
   </div>
