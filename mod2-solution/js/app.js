@@ -15,7 +15,7 @@ function ToBuyController(ShoppingListCheckOffService) {
 
   toBuy.buyItem = function (itemindex) {
     ShoppingListCheckOffService.buyItem(itemindex);
-    console.log(toBuy.availableItems);
+
   };
 
 }
@@ -38,7 +38,7 @@ function ShoppingListCheckOffService() {
   service.buyItem = function (itemindex) {
     var items = availableItems[itemindex];
     availableItems.splice(itemindex,1);
-    boughtItems.push(itemindex);
+    boughtItems.push(items);
   };
 
   service.getAvailableItems = function () {

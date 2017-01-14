@@ -11,12 +11,12 @@
   </head>
 <body>
   <div class="container">
-  <h1 align='center' >Shopping List Check Off</h1>
+  <h1 align='center' style="background-color: #337ab7; border-radius:30px; color:#ffffff">Shopping List Check Off</h1>
 
   <div class="row">
     <div class="card" ng-controller='ToBuyController as toBuy'>
     <!-- To Buy List -->
-    <div class="well col-md-offset-2 col-md-4" style="background-color:#B2EBF2">
+    <div class="well col-md-offset-2 col-md-4" style="background-color:#B2EBF2; border-radius:42px;">
      <h2 class="text-info" >To Buy <i class="fa fa-shopping-basket"></i>:</h2>
      <ul>
        <li ng-repeat='item in toBuy.availableItems'>
@@ -26,20 +26,20 @@
 
      </ul>
 
-     <div class="emptyMessage" ng-if='toBuy.availableItems.length == 0'>Everything is bought!</div>
+     <div class="emptyMessage" ng-if='toBuy.availableItems.length == 0' align='center'>Everything is bought!</div>
     </div>
     </div>
 
     <div class="card" ng-controller='AlreadyBoughtController as alreadyBought'>
       <!-- Already Bought List -->
-    <div class="well col-md-offset-2 col-md-4" style='background-color:#DCEDC8'>
+    <div class="well col-md-offset-2 col-md-4" style='background-color:#DCEDC8; border-radius:35px;'>
          <h2 class="text-success">Already Bought <i class="fa fa-shopping-bag"></i>:</h2>
           <ul>
             <li ng-repeat='goods in alreadyBought.boughtItems'>
               Bought {{goods.quantity}} - {{goods.name}}
             </li>
           </ul>
-         <div class="emptyMessage" ng-if='alreadyBought.boughtItems.length == 0' >Nothing bought yet.</div>
+         <div class="emptyMessage" ng-if='alreadyBought.boughtItems.length == 0' align='center'>Nothing bought yet.</div>
     </div>
     </div>
   </div>
