@@ -5,7 +5,7 @@ angular.module('NarrowItDownApp', [])
 .controller('NarrowItDownController', NarrowItDownController)
 .service('MenuSearchService', MenuSearchService)
 .directive('foundItems', FoundItemsDirective)
-.constant('ApiPath', "http://davids-restaurant.herokuapp.com");
+.constant('ApiPath', "https://davids-restaurant.herokuapp.com");
 
 
 NarrowItDownController.$inject = ['MenuSearchService'];
@@ -41,12 +41,14 @@ function NarrowItDownController(MenuSearchService) {
 MenuSearchService.$inject = ['$http','ApiPath'];
 function MenuSearchService($http,ApiPath) {
   var service = this;
+
   service.getMatchedMenuItems = function() {
     return $http({
         method:"GET",
         url: (ApiPath +"/menu_items.json")
     });
   };
+
 }
 
 function FoundItemsDirective() {
