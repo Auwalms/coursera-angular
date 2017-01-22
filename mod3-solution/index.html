@@ -5,17 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles/bootstrap.min.css">
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
 <body>
    <div class="container" ng-controller='NarrowItDownController as list'>
     <h1>Narrow Down Your Chinese Menu Choice</h1>
-
-    <div class="form-group">
-      <input type="text" placeholder="search term" class="form-control" ng-model="list.Val">
-    </div>
-    <div class="form-group narrow-button">
-      <button class="btn btn-primary" ng-click="list.check();">Narrow It Down For Me!</button>
-    </div>
+    <div class="input-group form-group">
+          <input type="text" ng-model="list.value" class="form-control" placeholder="search term" required="required">
+          <span class="input-group-btn">
+              <button class="btn btn-primary" ng-click="list.check();">
+                <i class="fa fa-search"> </i> &nbsp;Narrow It Down For Me! &nbsp;
+              </button>
+              <img src="ajax-loader.gif" ng-show='list.loading'>
+          </span>
+    </div><!-- /input-group -->
 
     <!-- found-items should be implemented as a component -->
     <found-items items="list.found" on-remove="list.removeItem(index)"></found-items>

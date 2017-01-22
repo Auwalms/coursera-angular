@@ -16,18 +16,21 @@ function NarrowItDownController(MenuSearchService) {
   };
 
   list.check=function () {
+      list.loading = true;
       var promise = MenuSearchService.getMatchedMenuItems();
       promise.then(function (response) {
+        list.loading = false;
         var message = response.data.menu_items;
-        console.log(response.data);
+        console.log(message);
         list.found=[];
         for (var i = 0; i < message.length; i++) {
-          if(message[i].description.indexOf(list.Val)!=-1)
+          if(message[i].description.indexOf(list.value)!=-1)
             list.found.push(message[i]);
         }
 
        })
        .catch(function (error) {
+         list.loading = false;
          console.error(error);
        })
       };
@@ -50,7 +53,7 @@ function FoundItemsDirective() {
   var dir = {
   templateUrl: 'foundItems.html',
   scope: {
-    found:'<',
+    items:'<',
     onRemove: '&'
   },
   controller: FoundItemsDirectiveController,
@@ -65,7 +68,7 @@ function FoundItemsDirectiveController() {
   var FIDCtrl = this;
 
   FIDCtrl.checkList = function () {
-    if(FIDCtrl.found===undefined || FIDCtrl.found.length===0)
+    if(FIDCtrl.items===undefined || FIDCtrl.items.length===0)
       return true;
   };
 }
