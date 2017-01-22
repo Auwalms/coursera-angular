@@ -68,8 +68,7 @@ function FoundItemsDirectiveController() {
   var FIDCtrl = this;
 
   FIDCtrl.checkList = function () {
-    if(FIDCtrl.items===undefined || FIDCtrl.items.length===0)
-      return true;
+      return FIDCtrl.items && FIDCtrl.items.length===0;
   };
 }
 
