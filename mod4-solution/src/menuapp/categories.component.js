@@ -4,7 +4,7 @@
 
   angular.module('MenuApp')
   .component('categories',{
-    template: '<div>Testing Templates</div>',
+    templateUrl: 'src/menuapp/templates/categories.template.html',
     bindings: {
       items: '<'
     }

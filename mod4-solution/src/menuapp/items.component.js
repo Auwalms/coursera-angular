@@ -4,7 +4,7 @@
 
   angular.module('MenuApp')
   .component('items', {
-    template: '<template Url here>',
+    templateUrl: 'src/menuapp/templates/items.template.html',
     bindings : {
       items : '@'
     }
