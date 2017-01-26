@@ -16,6 +16,20 @@
   .state('home', {
     url:'/',
     templateUrl:'src/menuapp/templates/home.template.html'
+  })
+
+
+  .state('categories',{
+    url: '/categories',
+    templateUrl :'src/menuapp/templates/categories.template.html'
+
+  })
+
+  .state('items', {
+    url: '/items',
+    templateUrl :'src/menuapp/templates/items.template.html'
   });
+
+
   }
 })();
