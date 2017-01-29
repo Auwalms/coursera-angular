@@ -1,13 +1,19 @@
 <div class="col-md-6" style="border-left-color:#fff000; ">
   <h2>Menu categories</h2>
-  <p>Kindly Click on the category you are interested,</p>
+  <div class="card">
+    <p>Kindly Click on the category you are interested,</p>
 
-  <categories items="ctrl.categories"></categories>
+    <categories items="ctrl.categories"></categories>
 
-  <button ui-sref="home" class="btn btn-primary">Return to homepage</button>
+    <button ui-sref="home" class="btn btn-primary">Return to homepage</button>
+  </div>
+
 </div>
 
 <div class="col-md-6">
   <h2>Menu items</h2>
-  <ui-view></ui-view>
+  <div class="well">
+    <ui-view></ui-view>
+  </div>
+
 </div>
