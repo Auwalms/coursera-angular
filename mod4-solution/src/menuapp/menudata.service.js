@@ -22,7 +22,7 @@
            url: (ApiPath + '/categories.json')
          })
          .then(function (response) {
-           return.data;
+           return response.data;
          });
       };//end of getAllCategories function
 
