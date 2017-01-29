@@ -8,6 +8,7 @@ ItemListController.$inject = ['$stateParams','items'];
 function ItemListController($stateParams, items) {
   var itemsCtrl = this;
 
-  itemsCtrl.items = items;
+  itemsCtrl.menuItems = items.data.menu_items;
+  itemsCtrl.name = items.data.category.name;
 }
 })();

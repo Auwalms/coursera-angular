@@ -1,5 +1,5 @@
-<div class="container" >
-  <li ng-repeat='catItem in ' style="list-style: none;">
-    <button ui-sref='' class="btn btn-primary btn-xs">{{cat.name}} [ {{cat.short_name}}]</button>
-  </li>
-</div>
+<a ui-sref="home">Home</a> &lt; <span>List</span>
+
+<h3>All Categories</h3>
+<categories items="catList.items"></categories>
+<ui-view></ui-view>

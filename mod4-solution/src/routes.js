@@ -1,49 +1,48 @@
 (function () {
-  'use strict';
-  console.log('Routes Running');
+'use strict';
 
-  angular.module('MenuApp')
-          .config(RoutesConfig);
+angular.module('MenuApp')
+.config(RoutesConfig);
 
-  RoutesConfig.$inject=['$stateProvider','$urlRouterProvider'];
-  function RoutesConfig($stateProvider, $urlRouterProvider) {
-    // Redirect to home page if no other URL matches
+RoutesConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
+function RoutesConfig($stateProvider, $urlRouterProvider) {
+
+  // Redirect to home page if no other URL matches
   $urlRouterProvider.otherwise('/');
 
-
+  // *** Set up UI states ***
   $stateProvider
-  //Home Page Route
+
+  // Home page
   .state('home', {
-    url:'/',
-    templateUrl:'src/menuapp/templates/home.template.html'
+    url: '/',
+    templateUrl: 'src/menuapp/templates/home.template.html'
   })
-
-
-  .state('categories',{
+  // Premade list page
+  .state('categories', {
     url: '/categories',
-    templateUrl :'src/menuapp/templates/categories-list.template.html',
-    controller : 'categoriesListController as catCtrl',
+    templateUrl: 'src/menuapp/templates/main-categories-list.template.html',
+    controller: 'CategoriesController as categoriesList',
     resolve: {
-      categories: ['MenuDataService', function (MenuDataService) {
-          return MenuDataService.getAllCategories();
+      items: ['MenuDataService', function (MenuDataService) {
+        return MenuDataService.getAllCategories();
       }]
     }
   })
-
-  .state('items', {
-    url: '/items',
-    templateUrl :'src/menuapp/templates/items-list.template.html',
-    controller: 'ItemListController as itemsCtrl',
-    params:  {categoryShortName: null},
+  .state('categoriesList.menuItems', {
+    url: '/menu-items/{catShortName}',
+    templateUrl: 'src/menuapp/templates/items.template.html',
+    controller: 'ItemDetailController as itemDetail',
     resolve: {
-      items: ['$stateParams', 'MenuDataService', function ($stateParams, MenuDataService) {
-          return MenuDataService.getItemsForCategory($stateParams.categoryShortName);
-      }
-
-      ]
+      items: ['$stateParams', 'MenuDataService',
+            function ($stateParams, MenuDataService) {
+              console.log(MenuDataService.getItemsForCategory($stateParams.catShortName));
+              console.log('shortname in routes ' + $stateParams.catShortName);
+              return MenuDataService.getItemsForCategory($stateParams.catShortName);
+            }]
     }
   });
 
-
   }
+
 })();

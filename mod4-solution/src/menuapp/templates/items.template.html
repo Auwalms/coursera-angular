@@ -1,7 +1,3 @@
 
-<div class="container" >
-  <ul>
-    <li ng-repeat='item in itemsCtrl.items'></li>
-    {{item.name}}</b> [{{item.short_name}}]</br>{{item.description}}
-  </ul>
-</div>
+<h3>{{itemDetail.name}} Menu Items</h3>
+<items-list items="itemDetail.menuItems"></items-list>

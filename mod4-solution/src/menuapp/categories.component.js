@@ -5,14 +5,10 @@
   angular.module('MenuApp')
   .component('categories',{
     templateUrl: 'src/menuapp/templates/categories.template.html',
-    controller: CategoriesComponentController,
     bindings: {
       items: '<'
     }
   });
 
-  function CategoriesComponentController() {
-
-  }
 
 })();
