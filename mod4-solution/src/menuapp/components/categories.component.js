@@ -1,9 +1,9 @@
 (function() {
   "use strict";
-  
+
   angular.module("MenuApp")
     .component("categories", {
-      templateUrl: "js/components/categories.template.html",
+      templateUrl: "src/menuapp/components/categories.template.html",
       controller: CategoriesComponentController,
       bindings: {
         items: "<"
