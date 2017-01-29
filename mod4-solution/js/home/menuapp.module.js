@@ -1,6 +1,6 @@
 (function() {
   "use strict";
-  
-  //Depends on add-on ui-router and custom module data
+
+  //Depends on add-on ui-router and data module
   angular.module("MenuApp", ["ui.router", "data"]);
 })();

@@ -11,11 +11,11 @@
     $stateProvider
       .state("home", {
         url:          "/",
-        templateUrl:  "src/menuapp/home/home.template.html"
+        templateUrl:  "js/home/home.template.html"
       })
       .state("categories", {
         url:          "/categories",
-        templateUrl:  "src/menuapp/categories/categories-list.template.html",
+        templateUrl:  "js/categories/categories-list.template.html",
         controller:   "CategoriesListController as ctrl",
         resolve: {
           categories: [ "MenuDataService", function(MenuDataService) {
@@ -25,7 +25,7 @@
       })
       .state("categories.items", {
         url:          "/items/{categoryShortName}",
-        templateUrl:  "src/menuapp/categories/items-list.template.html",
+        templateUrl:  "js/categories/items-list.template.html",
         controller:   "ItemsListController as ctrl",
         params:       { categoryShortName: null },
         resolve: {
