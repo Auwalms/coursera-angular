@@ -1,6 +1,5 @@
-
 <div class="container" >
-  <div class="row text-primary"><h1 class="text-center">Categories Template loaded</h1>
-      <p><a ui-sref='home'><strong>Home</strong></a></p>
-  </div>
+  <li ng-repeat='catItem in ' style="list-style: none;">
+    <button ui-sref='' class="btn btn-primary btn-xs">{{cat.name}} [ {{cat.short_name}}]</button>
+  </li>
 </div>

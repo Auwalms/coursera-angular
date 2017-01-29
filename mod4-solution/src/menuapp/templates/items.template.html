@@ -1,6 +1,7 @@
 
 <div class="container" >
-  <div class="row text-primary"><h1 class="text-center">Items Template loaded</h1>
-      <p><a ui-sref='home'><strong>Home</strong></a></p>
-  </div>
+  <ul>
+    <li ng-repeat='item in itemsCtrl.items'></li>
+    {{item.name}}</b> [{{item.short_name}}]</br>{{item.description}}
+  </ul>
 </div>
