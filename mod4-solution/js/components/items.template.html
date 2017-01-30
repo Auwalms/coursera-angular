@@ -3,4 +3,5 @@
     <b>{{ item.name }}</b> [{{ item.short_name }}]<br />
     {{ item.description }}
   </li>
+  <li ng-if='$ctrl.list.length == 0'>Select a categor to load items</li>
 </ul>
