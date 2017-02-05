@@ -50,12 +50,12 @@
                 <a ui-sref="public.menu">
                   <span class="glyphicon glyphicon-cutlery"></span><br class="hidden-xs"> Menu</a>
               </li>
-              <li>
-                <a href="public.myInfo">
+              <li id="navMenuButton" ui-sref-active="active">
+                <a ui-sref="public.myInfo">
                   <span class="glyphicon glyphicon-info-sign"></span><br class="hidden-xs"> My Info</a>
               </li>
-              <li>
-                <a href="public.signUp">
+              <li id="navMenuButton" ui-sref-active="active">
+                <a ui-sref="public.signUp">
                   <span class="glyphicon glyphicon-certificate"></span><br class="hidden-xs"> Sign Up</a>
               </li>
               <li id="phone" class="hidden-xs">
@@ -132,6 +132,12 @@
     <script src="src/public/menu-category/menu-category.component.js"></script>
     <script src="src/public/menu-items/menu-items.controller.js"></script>
     <script src="src/public/menu-item/menu-item.component.js"></script>
+
+    <!-- Load files for my solution -->
+  <script src="src/common/users.service.js"></script>
+  <script src="src/public/sign-up/sign-up.controller.js"></script>
+  <script src="src/public/my-info/my-info.controller.js"></script>
+  <!-- Made changes to src/common/menu.service.js as well -->
 
     <!-- ADMIN SITE -->
 

@@ -39,8 +39,8 @@
         </p>
 
         <p>
-          <label for="phone">Phone number (American style) [optional]:</label>
-          <input type="phone" name="phoneNumber" id="phoneNumber" placeholder="###-###-###"
+          <label for="phone">Phone number[optional]:</label>
+          <input type="phone" name="phoneNumber" id="phoneNumber" placeholder="###-###-####"
             ng-model="signUpCtrl.phoneNumber" pattern="(\d{3})-(\d{3})-(\d{4})" class="form-control">
           <span ng-if="signUpForm.phoneNumber.$invalid && signUpForm.phoneNumber.$touched"
             style="color: white; background-color: red">Phone number must only contain numbers, spaces, dashes and parenthesis</span>
