@@ -20,6 +20,7 @@
             phoneNumber: $ctrl.phoneNumber,
             favoriteDish: $ctrl.favoriteDish
       };
+      console.log("Signed up Successfully... ");
 
       MenuService.getMenuItem($ctrl.favoriteDish)
         .then(function(data) {
